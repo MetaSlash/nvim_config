@@ -15,3 +15,4 @@ require("lazy").setup({
     spec = "tabouret.lazy",
     change_detection = { notify = false }
 })
+

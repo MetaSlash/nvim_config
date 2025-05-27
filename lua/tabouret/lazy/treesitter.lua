@@ -11,7 +11,11 @@ return {
                 "vim",
                 "vimdoc",
                 "c",
-                "query"
+                "query",
+                "go",
+                "gomod",
+                "gowork",
+                "gosum"
             },
             sync_install = false,
             auto_install = true,

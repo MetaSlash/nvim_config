@@ -20,7 +20,7 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
 vim.opt.undofile = true
-vim.opt.clipboard = "unnamed"
+vim.api.nvim_set_option("clipboard","unnamed")
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -34,3 +34,11 @@ vim.opt.showmode = false
 -- No automatic comment insertion
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NonText", { bg = "none" })
